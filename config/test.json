@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "cyrus_jwtPrivateKey",
+  "db": "mongodb://localhost/daycare_tests"
+}
