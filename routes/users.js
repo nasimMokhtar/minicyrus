@@ -6,6 +6,7 @@ const _ = require('lodash');
 const auth = require('./../middleware/auth');
 
 router.post('/', async (req, res) => {
+    console.log(req.body);
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -18,7 +19,9 @@ router.post('/', async (req, res) => {
 
     try {
         const result = await user.save();
+        console.log("result");
         console.log(result);
+        req.body.id = result._id;
     }
     catch(ex) {
         console.log(ex.message);
